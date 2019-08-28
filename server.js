@@ -11,7 +11,8 @@ var exphbs = require("express-handlebars");
 
 var db = require("./models");
 
-var PORT = 3002;
+
+var PORT = process.env.PORT|| 3002;
 
 var app = express();
 
@@ -25,8 +26,8 @@ app.use(express.json());
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+var MONGODB_URI =process.env.MONGODB_URI || "mongodb://localhost/unit18Populater"
+mongoose.connect(MONGODB_URI);
 app.get("/", function(req, res) {
   console.log('9999')
   db.Article.find({})

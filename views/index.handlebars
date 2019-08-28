@@ -1,0 +1,17 @@
+
+
+    <div id="wrapper">
+      <h1>Note Scraper</h1>
+      <h2><i>If you can do this...the homework should be no problem.</i></h2>
+      
+  {{#each article}}
+
+    <!-- Here the context is each individual person. So we can access its properties directly: -->
+    <p>{{title}}
+    <br><a href={{link}}>{{link}}</a></p>
+
+  {{/each}}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+ 
